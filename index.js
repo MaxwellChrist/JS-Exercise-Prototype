@@ -140,10 +140,16 @@ console.log(randomBaby.play());
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Window/Console binding -> If the "this" is not within anything and therefore within the global scope,
+     "this" pertains to the window/console object (unless you're using strict mode)
+  2. Explicit binding -> We're explicitly telling what "this" should be binded to. The easiest way I've
+     seen so far is by using the .call or .apply bindings
+  3. Implicit binding -> The "this" is within an object and when the object calls a function (when a method 
+    pertaining to the object is invoked), you look at the information to the left of the dot which calls
+    the function (so far it has usually the entire object itself that the method is wrapped in)
+  4. constructor binding with the "new" keyword -> you can create a new object with the "new" keyword. "This"
+     now pertains to the information within the new object created with the "new" keyword, but uses the 
+     constructor function to know which value is what 
 */
 
 
