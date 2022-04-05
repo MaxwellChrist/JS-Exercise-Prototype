@@ -96,12 +96,28 @@ console.log(randomPerson.stomach);
     - STRETCH: A car which runs out of `fuel` while driving can't drive any more distance:
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
-
-function Car() {
-  
+function Car(model, milesPerGallon) {
+  this.tank = 0;
+  this.odometer = 0;
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
 }
 
+Car.prototype.fill = function(gallons) {
+  this.tank = this.tank + gallons
+}
 
+Car.prototype.start = function() {
+  return `My ${this.model} currently has ${this.tank} gallons of gas in the tank and can go ${this.milesPerGallon} miles per gallon!`
+}
+
+const newCar = new Car("2015 Mazda RX8", 26);
+const newCar2 = new Car("2008 Honda Civic", 38);
+const newCar3 = new Car("2012 Hummer H3", 12);
+
+console.log(newCar.start());
+console.log(newCar2.start());
+console.log(newCar3.start())
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
